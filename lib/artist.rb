@@ -16,7 +16,7 @@ class Artist
   # are currently in. However, initialize is an instance
   # method, since you are working on instances within the class
     # self.class.all << self
-    # super yields to the parent first, then you can add 
+    # super yields to the parent first, then you can add
     # additional functionality to it.
     super
     @songs = []
