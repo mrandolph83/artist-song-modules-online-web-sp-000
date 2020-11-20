@@ -5,14 +5,20 @@ class Artist
   attr_accessor :name
   attr_reader :songs
   extend Memorable::ClassMethods
+  include Memorable::InstanceMethods
   extend Findable
   include Paramable
   @@artists = []
 
   def initialize
   # Becomes a class method rather than writing it out as
-  # @@artists << self
-    self.class.all << self
+  # @@artists << self. self.class reads the class you
+  # are currently in. However, initialize is an instance
+  # method, since you are working on instances within the class
+    # self.class.all << self
+    # super yields to the parent first, then you can add 
+    # additional functionality to it.
+    super
     @songs = []
   end
 
