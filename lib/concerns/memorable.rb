@@ -1,4 +1,5 @@
 module Memorable
+  
   module ClassMethods
   # When you are defining class methods
   # within modules, omit the self keyword when
@@ -10,6 +11,16 @@ module Memorable
     def count
       self.all.count
     end
+    
   end
+
+  module InstanceMethods
+    
+    def initialize
+      self.class.all << self
+    end
+    
+  end
+  
 
 end 
